@@ -38,6 +38,11 @@ function Filters() {
     setPriceRange(newValue);
   };
 
+  const handleClear =() =>{
+    setSearchTerm('')
+    setPriceRange([0,100])
+    setSelectedCategories([])
+  }
   return (
     <>
       <div className='container-fluid'>
@@ -87,8 +92,8 @@ function Filters() {
               max={100}
               step={5}
             />
+          <button className = "btn btn-warning" onClick={handleClear}>Clear Filters</button>
           </div>
-          
           <div className='col-md-9'>
             <Typography variant="h3">Products</Typography>
             <div className='row'>
